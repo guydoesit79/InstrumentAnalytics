@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-03-16"
+lastupdated: "2017-08-15"
 
 ---
 {:new_window: target="_blank"}
@@ -27,9 +27,9 @@ The following steps show you how to obtain access to the {{site.data.keyword.ins
 
 You must install cURL before you can use the service.
 
-## Step 1: Create an application and bind it to the service
+## Step 1: Getting your credentials
 
-1. Create an application that binds to the service instance.
+1. Create an instance of the service.
 2. Review the service instance access credentials, similar to the following example:
 ```
 {
@@ -43,7 +43,7 @@ You must install cURL before you can use the service.
 To use the following example, replace api-key with your service key and service-url with the URL for your service.
 
 ```
-curl -X GET -H "X-IBM-Access-Token: <api-key>” “<service-url>/api/v1/instrument/<id-of-instrument>”
+curl -X GET -H "X-IBM-Access-Token: <api-key>" <service-url>/api/v1/instrument/<id-of-instrument>
 ```
 
 {:codeblock}
@@ -53,8 +53,8 @@ The following is an example of a response to a successful request:
 ```
 [
   {
-    "instrument": “<id-of-instrument>",
-    "scenario": “Base Scenario",
+    "instrument": "<id-of-instrument>",
+    "scenario": "Base Scenario",
     "values": [
       {
         "THEO/Price": "100 USD",
@@ -64,10 +64,10 @@ The following is an example of a response to a successful request:
   }
 ]
 ```
-Example using `POST`. Using `POST` is preferred if you are requesting a large number of analytics, or if there are commas within the analytic names.
+Example using 'POST'. Using 'POST' is preferred if you are requesting a large number of analytics, or if there are commas within the analytic names.
 
 ```
-curl -X POST -H "X-IBM-Access-Token: <api-key>” -d '{"analytics":["THEO/Value","THEO/Price", "THEO/Effective Duration"]}' “<service-url>/api/v1/instrument/<id-of-instrument>”
+curl -X POST -H "X-IBM-Access-Token: <api-key>" -d '{"analytics":["THEO/Value","THEO/Price", "THEO/Effective Duration"]}' <service-url>/api/v1/instrument/<id-of-instrument>
 ```
 
 {:codeblock}
@@ -77,7 +77,7 @@ The following is an example of a response to a successful request:
 ```
 [
   {
-    "instrument": “<id-of-instrument>",
+    "instrument": "<id-of-instrument>",
     "scenario": "Base Scenario",
     "values": [
       {
@@ -93,7 +93,7 @@ The following is an example of a response to a successful request:
 
 A list of instruments is available [here](http://public.dhe.ibm.com/software/analytics/solutions/en/fintech/Sample_Instrument_Universe.xlsx).
 
-The following table contains `Field Name` values that you can pass to the API for the measures, and the asset classes (Fixed Income, Equity, or Derivative) that they apply to:
+The following table contains 'Field Name' values that you can pass to the API for the measures, and the asset classes (Fixed Income, Equity, or Derivative) that they apply to:
 
 |Measure Name|Field Name|Fixed Income|Equity|Derivatives|
 |------------|----------|------------|------|-----------|
