@@ -9,5 +9,5 @@ Instrument Analytics
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [API Reference](https://console.bluemix.net/apidocs/fss-instrument-analytics-service)
+    [API Reference](https://console.bluemix.net/apidocs/instrument-analytics)
     {: .navgroup-end}
